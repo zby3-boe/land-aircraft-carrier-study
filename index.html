@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>亿航智能 EH216-S — 技术可行性、场景与商业运营分析 | FVT 2026</title>
+  <meta name="description" content="以系统观、证据观与可行性观，对全球首个“四证齐全”无人驾驶载人 eVTOL 亿航 EH216-S 进行全维度深度调研与工程评估。">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="fv-page" lang="zh-CN">
+  <div class="fv-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <nav class="lab-nav fv-nav" id="caseNav" aria-label="主导航">
+    <div class="lab-nav-inner">
+      <a href="#top" class="lab-nav-brand">
+        <span class="lab-nav-badge">FVT 2026 · EH216-S</span>
+        <span class="cn">飞行汽车技术基础 · 课程调研报告</span>
+        <span class="en">FVT 2026 · EH216-S Feasibility Report</span>
+      </a>
+      <button class="lab-nav-toggle" onclick="toggleNav()" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="lab-nav-links">
+        <li><a href="#method"><span class="cn">证据审计</span><span class="en">Evidence</span></a></li>
+        <li><a href="#technology"><span class="cn">系统技术</span><span class="en">Tech</span></a></li>
+        <li><a href="#flight"><span class="cn">物理边界</span><span class="en">Physics</span></a></li>
+        <li><a href="#scenarios"><span class="cn">场景矩阵</span><span class="en">Scenarios</span></a></li>
+        <li><a href="#market"><span class="cn">经济性与竞品</span><span class="en">Market</span></a></li>
+        <li><a href="#references"><span class="cn">参考文献</span><span class="en">Refs</span></a></li>
+        <li><button type="button" class="nav-action-btn" onclick="window.print()"><span class="cn">打印/PDF</span><span class="en">Print/PDF</span></button></li>
+        <li class="lab-lang-switch"><a href="#" onclick="toggleLang();return false;" id="langBtn">EN</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="fv-article-hero">
+      <div class="container fv-article-hero-grid">
+        <div class="fv-article-hero-copy">
+          <p class="fv-kicker"><span class="cn">飞行汽车技术基础（2026）· 作业-1 深度技术与商业调研</span><span class="en">Fundamentals of Flying Vehicle Technology (2026) · Assignment 1 Study</span></p>
+          <h1 class="fv-article-title">
+            <span class="cn">亿航智能 EH216-S：无人驾驶多旋翼 eVTOL 的适航先发优势、物理极限与商业可行性</span>
+            <span class="en">EHang EH216-S: Certification First-Mover Advantage, Physical Bounds, and Commercial Feasibility</span>
+          </h1>
+          <p class="fv-deck cn">
+            当多数竞争对手仍在等待型号合格证（TC）时，亿航 EH216-S 已于 2023–2025 年间陆续集齐 TC、AC、PC 与首批运营合格证（OC）。然而，“最先取证”并不自动等同于“通用城市空中出租车”——620 kg 轻量化构型、17 kWh 电池带来的 20–25 分钟纯电多旋翼航时，决定了它必须在景区观光、跨海短驳等高净空短途场景中精算单位经济性。
+          </p>
+          <p class="fv-deck en">
+            While most eVTOL peers still pursue initial certification, EHang's EH216-S secured CAAC TC, AC, PC, and commercial OC approvals across 2023–2025. Yet "first to certify" does not automatically equal universal urban air taxi: its 620 kg MTOW and ~17 kWh pack constrain endurance to 20–25 min, anchoring commercial viability in scenic loops and short point-to-point shuttles.
+          </p>
+          <div class="fv-byline">
+            <span><span class="cn">研究对象：EHang EH216-S（8 轴 16 旋翼无人驾驶）</span><span class="en">Subject: EHang EH216-S (16-Rotor Autonomous)</span></span>
+            <span><span class="cn">方法论：系统观 · 证据观 · 可行性观</span><span class="en">Method: System, Evidence &amp; Feasibility Views</span></span>
+            <span><span class="cn">证据截止：2026-11-23</span><span class="en">Cut-off: 2026-11-23</span></span>
+          </div>
+        </div>
+
+        <figure class="fv-hero-visual">
+          <svg viewBox="0 0 640 420" role="img" aria-label="亿航 EH216-S 构型与性能包线蓝图">
+            <defs>
+              <pattern id="gridEh1" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#163b38" stroke-width="0.6"/>
+              </pattern>
+            </defs>
+            <rect width="640" height="420" fill="#0b2624"/>
+            <rect width="640" height="420" fill="url(#gridEh1)"/>
+            <text x="20" y="26" fill="#7cd9cc" font-family="ui-monospace, monospace" font-size="10.5" font-weight="700">VEHICLE BLUEPRINT // EHANG EH216-S AUTONOMOUS AAV</text>
+            <line x1="20" y1="36" x2="620" y2="36" stroke="#21544f"/>
+
+            <g transform="translate(175, 178)">
+              <circle cx="0" cy="0" r="102" fill="none" stroke="#2c6b64" stroke-dasharray="4,3"/>
+              <line x1="-96" y1="0" x2="96" y2="0" stroke="#7cd9cc" stroke-width="2.5"/>
+              <line x1="0" y1="-96" x2="0" y2="96" stroke="#7cd9cc" stroke-width="2.5"/>
+              <line x1="-68" y1="-68" x2="68" y2="68" stroke="#7cd9cc" stroke-width="2.5"/>
+              <line x1="-68" y1="68" x2="68" y2="-68" stroke="#7cd9cc" stroke-width="2.5"/>
+              <g fill="#164540" stroke="#7cd9cc" stroke-width="1.4">
+                <circle cx="96" cy="0" r="16"/><circle cx="-96" cy="0" r="16"/>
+                <circle cx="0" cy="96" r="16"/><circle cx="0" cy="-96" r="16"/>
+                <circle cx="68" cy="68" r="16"/><circle cx="-68" cy="-68" r="16"/>
+                <circle cx="68" cy="-68" r="16"/><circle cx="-68" cy="68" r="16"/>
+              </g>
+              <ellipse cx="0" cy="0" rx="40" ry="28" fill="#18524c" stroke="#c4efe9" stroke-width="2"/>
+              <text x="0" y="-2" fill="#ffffff" font-size="9.5" font-weight="700" text-anchor="middle" font-family="sans-serif">2-PAX Cabin</text>
+              <text x="0" y="12" fill="#a8e6de" font-size="8.5" text-anchor="middle" font-family="sans-serif">6.05 m × 5.73 m</text>
+              <text x="0" y="125" fill="#7cd9cc" font-size="9.5" text-anchor="middle" font-family="ui-monospace, monospace">8 Arms · 16 Coaxial Rotors · MTOW 620 kg</text>
+            </g>
+
+            <g font-family="sans-serif">
+              <rect x="345" y="56" width="275" height="72" fill="#123835" stroke="#479e93"/>
+              <text x="358" y="77" fill="#7cd9cc" font-size="11" font-weight="700">核心技术构型 (Configuration)</text>
+              <text x="358" y="96" fill="#d7f3ef" font-size="9.5">• 8 轴 16 旋翼共轴双桨纯电多旋翼</text>
+              <text x="358" y="113" fill="#d7f3ef" font-size="9.5">• 12 组独立电池 (~17 kWh) · 充电 ~120 min</text>
+
+              <rect x="345" y="144" width="275" height="72" fill="#123835" stroke="#479e93"/>
+              <text x="358" y="165" fill="#7cd9cc" font-size="11" font-weight="700">典型飞行包线 (Flight Envelope)</text>
+              <text x="358" y="184" fill="#d7f3ef" font-size="9.5">• 巡航 90–100 km/h · 最大 130 km/h</text>
+              <text x="358" y="201" fill="#d7f3ef" font-size="9.5">• 设计航程 30 km · 续航 20–25 min</text>
+
+              <rect x="345" y="232" width="275" height="72" fill="#163b2d" stroke="#5b8c74"/>
+              <text x="358" y="253" fill="#80e0a7" font-size="11" font-weight="700">商业化里程碑 (Certification)</text>
+              <text x="358" y="272" fill="#e1f5eb" font-size="9.5">• 2023-10 TC → 2024-03 PC → 2025-03 OC</text>
+              <text x="358" y="289" fill="#e1f5eb" font-size="9.5">• 建议零售价：国内 ~239 万 / 海外 41 万美元</text>
+            </g>
+
+            <rect x="20" y="346" width="600" height="54" fill="#0f302d" stroke="#2c6b64"/>
+            <text x="34" y="369" fill="#7cd9cc" font-size="10" font-weight="700" font-family="ui-monospace, monospace">OPERATIONAL NICHE: B2B Scenic Sightseeing &amp; Short Shuttle (No Pilot License Needed by PAX)</text>
+            <text x="34" y="387" fill="#9bdcd3" font-size="9.5" font-family="sans-serif">注：固态电池测试版宣称提升至 48–60 min 续航，当前商业 OC 交付仍以液态锂电 25 min 构型为主。</text>
+          </svg>
+          <figcaption>
+            <span class="cn">图 0：亿航 EH216-S 系统几何与核心包线示意图。无翼纯多旋翼设计牺牲了长航程，却大幅简化了适航审定复杂度与起降场占地要求。</span>
+            <span class="en">Figure 0: EHang EH216-S geometric envelope and baseline specs. Pure multirotor design sacrifices long-range cruise for compact footprint and faster certification.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <div class="container fv-article-shell">
+      <nav class="fv-toc" aria-label="文章目录">
+        <p class="fv-toc-title"><span class="cn">文章目录</span><span class="en">Contents</span></p>
+        <ol>
+          <li><a href="#summary"><span class="cn">执行摘要</span><span class="en">Executive Summary</span></a></li>
+          <li><a href="#method">01 <span class="cn">研究设计与证据审计</span><span class="en">Method &amp; Evidence</span></a></li>
+          <li><a href="#path">02 <span class="cn">发展路径与取证时间线</span><span class="en">Certification Path</span></a></li>
+          <li><a href="#technology">03 <span class="cn">构型与核心子系统</span><span class="en">Architecture &amp; Tech</span></a></li>
+          <li><a href="#flight">04 <span class="cn">物理边界与航时仿真</span><span class="en">Physics &amp; Simulator</span></a></li>
+          <li><a href="#scenarios">05 <span class="cn">应用场景评估矩阵</span><span class="en">Application Scenarios</span></a></li>
+          <li><a href="#market">06 <span class="cn">B2B 运营经济性与竞品</span><span class="en">Economics &amp; Peers</span></a></li>
+          <li><a href="#roadmap">07 <span class="cn">Go / No-Go 扩张判据</span><span class="en">Go/No-Go Criteria</span></a></li>
+          <li><a href="#references"><span class="cn">参考文献</span><span class="en">References</span></a></li>
+        </ol>
+      </nav>
+
+      <article class="fv-article">
+        <section class="fv-executive" id="summary">
+          <h2><span class="cn">执行摘要</span><span class="en">Executive Summary</span></h2>
+          <ol>
+            <li><span class="cn"><strong>全球首个“四证齐全”的先发壁垒：</strong>EH216-S 于 2023 年 10 月至 2025 年 3 月相继获颁 CAAC 型号合格证（TC）、标准适航证（AC）、生产许可证（PC）与首批运营合格证（OC）<sup><a class="fv-citation" href="#ref1">[1]</a></sup><sup><a class="fv-citation" href="#ref2">[2]</a></sup>，成为目前唯一已跨入合规商业载人运营的 eVTOL 标杆。</span><span class="en"><strong>First-Mover Certification Moat:</strong> Between Oct 2023 and Mar 2025, EH216-S secured CAAC TC, AC, PC, and initial OC approvals<sup><a class="fv-citation" href="#ref1">[1]</a></sup><sup><a class="fv-citation" href="#ref2">[2]</a></sup>, making it the first certified commercial passenger eVTOL.</span></li>
+            <li><span class="cn"><strong>构型权衡——“低技术复杂度”换取“高商业确定性”：</strong>放弃倾转旋翼与固定机翼，选择纯多旋翼+无人驾驶预设航线，规避了过渡态气动控制和飞行员人力成本，但也把巡航速度锁在 ~90–100 km/h、设计航程锁在 ~30 km（20–25 min）。</span><span class="en"><strong>Pragmatic Trade-off:</strong> Avoiding tilting mechanisms and onboard pilots lowered certification risk and labor cost, while capping cruise near 90–100 km/h and range at ~30 km (20–25 min).</span></li>
+            <li><span class="cn"><strong>商业可行性锚点在 B2B 景区而非城际通勤：</strong>239 万元级采购成本配合日均 6–10 架次低空观光体验，在 350–500 元/人票价下具备清晰回本路径；而受限于 120 分钟充电周期与 30 km 航程，现阶段难以替代城市地面网约车或跨城高铁。</span><span class="en"><strong>Commercial Wedge:</strong> At ~¥2.39M CAPEX, scenic B2B sightseeing (6–10 trips/day at ¥350–500/seat) yields tangible payback, whereas 120-min turnaround and 30 km range limit urban ride-hailing substitution.</span></li>
+          </ol>
+        </section>
+
+        <div class="fv-stat-band">
+          <div><strong>四证齐全</strong><span class="cn">TC · AC · PC · OC 完整落地（2023–2025）</span><span class="en">TC, AC, PC &amp; OC certified (2023–2025)</span></div>
+          <div><strong>620 kg</strong><span class="cn">最大起飞重量（2 座无人驾驶构型）</span><span class="en">Max takeoff weight (2-seat pilotless)</span></div>
+          <div><strong>30 km / 25m</strong><span class="cn">现役液态锂电设计航程与续航（固态测试 48–60m）</span><span class="en">Li-ion range &amp; endurance (solid-state test 48–60m)</span></div>
+          <div><strong>~239 万 RMB</strong><span class="cn">国内官方指导价（海外建议价约 41 万美元）</span><span class="en">China MSRP ~¥2.39M (~$410k international)</span></div>
+        </div>
+
+        <h2 id="method"><span class="cn">01 研究设计与证据审计</span><span class="en">01 Research Design &amp; Evidence Audit</span></h2>
+        <p class="cn">本研究遵循系统综述式评估框架，筛选 2022 年 CAAC 专用条件生效至 2026 年 11 月 23 日的监管文件、企业公告与技术数据库，重点区分“现役取证构型参数”与“下一代固态电池测试原型参数”。</p>
+        <p class="en">Applying systematic-review discipline across 2022–2026 regulatory filings and OEM disclosures, this audit strictly separates certified Li-ion production specs from experimental solid-state test prototypes.</p>
+
+        <div class="fv-filter-bar" id="evidenceFilterBar">
+          <button type="button" class="fv-filter-btn active" onclick="filterEvidence('all', this)"><span class="cn">全部条目 (5)</span><span class="en">All (5)</span></button>
+          <button type="button" class="fv-filter-btn" onclick="filterEvidence('regulatory', this)"><span class="cn">监管取证</span><span class="en">Regulatory</span></button>
+          <button type="button" class="fv-filter-btn" onclick="filterEvidence('conflict', this)"><span class="cn">口径差异</span><span class="en">Conflicts</span></button>
+        </div>
+
+        <div class="fv-table-wrap">
+          <table class="fv-table" id="evidenceMatrixTable">
+            <thead>
+              <tr><th><span class="cn">审计条目</span><span class="en">Audit Item</span></th><th><span class="cn">核实数据与差异</span><span class="en">Verified Data / Divergence</span></th><th><span class="cn">状态</span><span class="en">Tier</span></th></tr>
+            </thead>
+            <tbody>
+              <tr data-tags="regulatory"><td><strong>TC / AC / PC / OC 状态</strong></td><td><span class="cn">TC(2023.10)、AC(2023.12)、PC(2024.03)、OC(2025.03.28 广东亿航通航与合肥合翼航空) 全部获批<sup><a class="fv-citation" href="#ref1">[1]</a></sup><sup><a class="fv-citation" href="#ref2">[2]</a></sup>。</span><span class="en">TC (Oct 2023), AC (Dec 2023), PC (Mar 2024), and OC (Mar 2025) granted<sup><a class="fv-citation" href="#ref1">[1]</a></sup><sup><a class="fv-citation" href="#ref2">[2]</a></sup>.</span></td><td><span class="fv-status fv-status-regulatory"><span class="cn">监管文件</span><span class="en">Regulatory</span></span></td></tr>
+              <tr data-tags="conflict"><td><strong><span class="cn">续航时间口径</span><span class="en">Flight Endurance</span></strong></td><td><span class="cn">现役取证版（~17 kWh 液态锂电）为 <strong>20–25 min</strong>；固态电池验证机宣称 <strong>48–60 min</strong>（尚未取证交付）<sup><a class="fv-citation" href="#ref3">[3]</a></sup><sup><a class="fv-citation" href="#ref4">[4]</a></sup>。</span><span class="en">Certified Li-ion (~17 kWh) delivers <strong>20–25 min</strong>; solid-state test rig claims <strong>48–60 min</strong> (uncertified)<sup><a class="fv-citation" href="#ref3">[3]</a></sup><sup><a class="fv-citation" href="#ref4">[4]</a></sup>.</span></td><td><span class="fv-status fv-status-conflict"><span class="cn">口径差异</span><span class="en">Conflict</span></span></td></tr>
+              <tr data-tags="regulatory"><td><strong><span class="cn">最大运行高度与速度</span><span class="en">Altitude &amp; Speed</span></strong></td><td><span class="cn">巡航 90–100 km/h，最大设计速度 130 km/h，典型运行高度 ≤ 200 m AGL（升限 3,000 m MSL）<sup><a class="fv-citation" href="#ref3">[3]</a></sup>。</span><span class="en">Cruise 90–100 km/h, Vmax 130 km/h, typical ops ≤ 200 m AGL (3,000 m MSL ceiling)<sup><a class="fv-citation" href="#ref3">[3]</a></sup>.</span></td><td><span class="fv-status fv-status-official"><span class="cn">官方披露</span><span class="en">Official</span></span></td></tr>
+              <tr data-tags="conflict"><td><strong><span class="cn">市场定价口径</span><span class="en">Pricing Tiers</span></strong></td><td><span class="cn">国内官方指导价 239 万元人民币；海外市场建议零售价 41 万美元（约 295 万人民币）<sup><a class="fv-citation" href="#ref5">[5]</a></sup>。</span><span class="en">China MSRP ¥2.39M vs international MSRP $410k USD<sup><a class="fv-citation" href="#ref5">[5]</a></sup>.</span></td><td><span class="fv-status fv-status-conflict"><span class="cn">口径差异</span><span class="en">Conflict</span></span></td></tr>
+              <tr data-tags="regulatory"><td><strong><span class="cn">充电周转时长</span><span class="en">Turnaround Charge</span></strong></td><td><span class="cn">12 组 ~17 kWh 电池标准充满约 120 分钟（高周转运营需多机轮换或高功率快充演进）<sup><a class="fv-citation" href="#ref3">[3]</a></sup>。</span><span class="en">~120-min full recharge for 12-pack ~17 kWh system limits rapid single-ship turnaround<sup><a class="fv-citation" href="#ref3">[3]</a></sup>.</span></td><td><span class="fv-status fv-status-official"><span class="cn">官方披露</span><span class="en">Official</span></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="path"><span class="cn">02 发展路径与适航取证时间线</span><span class="en">02 Development &amp; Certification Timeline</span></h2>
+        <div class="fv-timeline">
+          <div><time>2022-02</time><strong><span class="cn">专用条件正式生效</span><span class="en">Special Conditions</span></strong><p><span class="cn">CAAC 正式发布 EH216-S 无人载人航空器专用条件，确立无飞行员审定路径。</span><span class="en">CAAC adopted tailored pilotless passenger airworthiness criteria.</span></p></div>
+          <div><time>2023-10 / 12</time><strong><span class="cn">获颁全球首个 TC 与 AC</span><span class="en">First TC &amp; AC</span></strong><p><span class="cn">10 月获型号合格证（TC），12 月获标准适航证（AC）并完成广州合肥交付。</span><span class="en">Secured world's first eVTOL Type &amp; Standard Airworthiness Certificates.</span></p></div>
+          <div><time>2024-03 / 04</time><strong><span class="cn">获颁生产许可证 (PC)</span><span class="en">Production Cert (PC)</span></strong><p><span class="cn">云浮制造基地质量体系通过审查，进入批量合规生产阶段。</span><span class="en">Yunfu plant quality system approved for serial production.</span></p></div>
+          <div><time>2025-03-28</time><strong><span class="cn">全国首批 OC 落地</span><span class="en">First OC Approvals</span></strong><p><span class="cn">广东亿航通航与合肥合翼航空获颁运营合格证，开启商业载人体验。</span><span class="en">Operators cleared for commercial passenger sightseeing flights.</span></p></div>
+          <div><time>2025-11 / 2026</time><strong><span class="cn">跨琼州海峡与固态电池验证</span><span class="en">Cross-Strait &amp; Solid-State</span></strong><p><span class="cn">完成跨海峡点对点商业航线验证，并推进长续航电池测试与多城市布局。</span><span class="en">Validated cross-strait routes and 48–60 min solid-state test cells.</span></p></div>
+          <div><time>2026-11</time><strong><span class="cn">迈向网络化运营扩展</span><span class="en">Network Scaling Phase</span></strong><p><span class="cn">聚焦提高单机日周转频次、拓展城市低空起降坪并完善商业闭环。</span><span class="en">Scaling daily sortie utilization and urban vertiport density.</span></p></div>
+        </div>
+
+        <h2 id="technology"><span class="cn">03 系统架构与核心技术特征</span><span class="en">03 System Architecture &amp; Core Technologies</span></h2>
+        <p class="cn">EH216-S 采用极简紧凑的“无尾翼、无起落轮、8 臂 16 旋翼共轴”布局，机身尺寸 6.05 m × 5.73 m × 1.93 m，可在标准小型直升机停机坪或景区广场快速起降。动力由 16 台独立电机驱动，配合 12 组分散式智能电池与多套表决飞控计算机，通过 4G/5G 通信链路接受地面指挥调度中心全天候监控。</p>
+        <p class="en">EH216-S eliminates wings and landing wheels in favor of a compact 6.05 m × 5.73 m coaxial 8-arm layout. Sixteen independent motors, 12 smart battery packs, and voting flight computers coordinate with a 4G/5G ground dispatch center.</p>
+
+        <h2 id="flight"><span class="cn">04 物理边界与航时第一性原理仿真</span><span class="en">04 Physics Bounds &amp; Endurance Simulator</span></h2>
+        <div class="fv-formula">P_ideal = W^(3/2) / sqrt(2 * rho * 8 * pi * R^2) &nbsp;|&nbsp; P_elec = P_ideal / (FM_coax * eta_elec)</div>
+        <section class="sim-card" id="physics-simulator" aria-label="EH216-S 物理功耗与航时仿真器">
+          <div class="sim-header">
+            <h4><span class="cn">交互式 16 旋翼共轴功耗与航时仿真器</span><span class="en">Interactive 16-Rotor Coaxial Endurance Simulator</span></h4>
+            <button type="button" class="sim-reset-btn" onclick="resetPhysicsSim()"><span class="cn">重置基准</span><span class="en">Reset</span></button>
+          </div>
+          <div class="sim-grid">
+            <div class="sim-controls">
+              <div class="sim-control"><label><span><span class="cn">起飞重量 MTOW</span><span class="en">Takeoff Mass</span></span><span class="val" id="valMtow">620 kg</span></label><input type="range" id="simMtow" min="520" max="700" step="10" value="620"></div>
+              <div class="sim-control"><label><span><span class="cn">单次可用电能（扣储备后）</span><span class="en">Usable Mission Energy</span></span><span class="val" id="valKwh">13.5 kWh</span></label><input type="range" id="simKwh" min="10" max="32" step="0.5" value="13.5"><small><span class="cn">13.5 kWh 对应现役 17 kWh 液态锂电；拉至 28+ kWh 模拟固态升级版</span><span class="en">13.5 kWh = Li-ion baseline; 28+ kWh = solid-state upgrade</span></small></div>
+              <div class="sim-control"><label><span><span class="cn">单桨有效半径 R</span><span class="en">Rotor Radius R</span></span><span class="val" id="valRadius">0.78 m</span></label><input type="range" id="simRadius" min="0.65" max="0.90" step="0.01" value="0.78"></div>
+              <div class="sim-control"><label><span><span class="cn">90 km/h 巡航功率 / 悬停功率比</span><span class="en">Cruise/Hover Power Ratio</span></span><span class="val" id="valCruise">76%</span></label><input type="range" id="simCruise" min="0.65" max="0.95" step="0.01" value="0.76"></div>
+            </div>
+            <div class="sim-results">
+              <div class="sim-metric"><span class="lbl"><span class="cn">悬停电池端功率</span><span class="en">Hover Battery Power</span></span><strong class="num" id="outHoverPower">—</strong></div>
+              <div class="sim-metric"><span class="lbl"><span class="cn">等效盘载荷 (DL)</span><span class="en">Disk Loading (DL)</span></span><strong class="num" id="outDiskLoading">—</strong></div>
+              <div class="sim-metric"><span class="lbl"><span class="cn">实飞航时区间（悬停–巡航）</span><span class="en">Net Endurance</span></span><strong class="num" id="outEndurance">—</strong></div>
+              <div class="sim-metric"><span class="lbl"><span class="cn">推算实用航程</span><span class="en">Estimated Range</span></span><strong class="num" id="outRangeKm">—</strong></div>
+            </div>
+          </div>
+          <div class="sim-chart-box"><canvas id="physicsCurveCanvas" aria-label="EH216-S 重量与续航关系曲线"></canvas></div>
+        </section>
+
+        <h2 id="scenarios"><span class="cn">05 应用场景评估矩阵</span><span class="en">05 Application Scenario Matrix</span></h2>
+        <div class="fv-matrix-wrap">
+          <div class="fv-matrix">
+            <div class="fv-matrix-head"><span class="cn">场景</span><span class="en">Scenario</span></div>
+            <div class="fv-matrix-head"><span class="cn">技术适配</span><span class="en">Tech Fit</span></div>
+            <div class="fv-matrix-head"><span class="cn">取证现状</span><span class="en">Cert Fit</span></div>
+            <div class="fv-matrix-head"><span class="cn">商业回报</span><span class="en">ROI</span></div>
+            <div class="fv-matrix-head"><span class="cn">判断</span><span class="en">Verdict</span></div>
+
+            <div><strong><span class="cn">5A 景区/海滨低空观光</span><span class="en">Scenic Low-Altitude Tours</span></strong></div>
+            <div class="fv-level-4"><span class="cn">极高</span><span class="en">Very High</span></div>
+            <div class="fv-level-4"><span class="cn">已获 OC</span><span class="en">OC Ready</span></div>
+            <div class="fv-level-4"><span class="cn">高</span><span class="en">High</span></div>
+            <div class="fv-level-4"><span class="cn">核心落地场景</span><span class="en">Primary Wedge</span></div>
+
+            <div><strong><span class="cn">跨海/跨江短途摆渡</span><span class="en">Cross-Water Shuttle</span></strong></div>
+            <div class="fv-level-3"><span class="cn">较高 (&lt;25km)</span><span class="en">Med-High</span></div>
+            <div class="fv-level-3"><span class="cn">专线审批</span><span class="en">Route OC</span></div>
+            <div class="fv-level-3"><span class="cn">较高</span><span class="en">Med-High</span></div>
+            <div class="fv-level-3"><span class="cn">已验证可拓展</span><span class="en">Validated Niche</span></div>
+
+            <div><strong><span class="cn">城市中心随机点网约接驳</span><span class="en">Urban Ad-Hoc Taxi</span></strong></div>
+            <div class="fv-level-1"><span class="cn">受限 (25m/120m充)</span><span class="en">Limited</span></div>
+            <div class="fv-level-1"><span class="cn">城区禁限高</span><span class="en">Strict</span></div>
+            <div class="fv-level-1"><span class="cn">待提升</span><span class="en">Tight</span></div>
+            <div class="fv-level-1"><span class="cn">远期演进</span><span class="en">Long-Term</span></div>
+
+            <div><strong><span class="cn">重载城际交通干线</span><span class="en">Intercity Trunk</span></strong></div>
+            <div class="fv-level-0"><span class="cn">低 (无翼低速)</span><span class="en">Low</span></div>
+            <div class="fv-level-0"><span class="cn">不适用</span><span class="en">N/A</span></div>
+            <div class="fv-level-0"><span class="cn">差</span><span class="en">Poor</span></div>
+            <div class="fv-level-0"><span class="cn">不适配</span><span class="en">Unsuitable</span></div>
+          </div>
+        </div>
+
+        <h2 id="market"><span class="cn">06 B2B 景区经济性测算与竞品定位</span><span class="en">06 B2B Scenic ROI &amp; Competitor Benchmark</span></h2>
+        <section class="sim-card" id="economics-calc" aria-label="EH216-S 单机商业运营回本测算器">
+          <div class="sim-header"><h4><span class="cn">交互式 B2B 景区运营回本周期测算器</span><span class="en">Interactive B2B Scenic Operator ROI Calculator</span></h4></div>
+          <div class="sim-grid">
+            <div class="sim-controls">
+              <div class="sim-control"><label><span><span class="cn">单机采购价格</span><span class="en">Aircraft Price</span></span><span class="val" id="valEcoPrice">239 万元</span></label><input type="range" id="ecoPrice" min="180" max="300" step="5" value="239"></div>
+              <div class="sim-control"><label><span><span class="cn">日均有效飞行架次（按年飞 260 天计）</span><span class="en">Daily Trips (260 days/yr)</span></span><span class="val" id="valEcoFlights">8 架次/日</span></label><input type="range" id="ecoFlights" min="2" max="16" step="1" value="8"></div>
+              <div class="sim-control"><label><span><span class="cn">单人观光票价（10–15 min 航线）</span><span class="en">Ticket Price / Seat</span></span><span class="val" id="valEcoTicket">450 元/人</span></label><input type="range" id="ecoTicket" min="200" max="800" step="50" value="450"></div>
+            </div>
+            <div class="sim-results">
+              <div class="sim-metric"><span class="lbl"><span class="cn">预估年营业收入（均载 1.75 人）</span><span class="en">Est. Annual Revenue</span></span><strong class="num" id="outEcoRev">—</strong></div>
+              <div class="sim-metric"><span class="lbl"><span class="cn">扣除维保/人工/场地后年净现金流</span><span class="en">Annual Net Cash Flow</span></span><strong class="num" id="outEcoNet">—</strong></div>
+              <div class="sim-metric wide"><span class="lbl"><span class="cn">静态投资回收期</span><span class="en">Static Payback Period</span></span><strong class="num" id="outEcoPayback">—</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <figure class="fv-figure"><canvas id="competitorCanvas" aria-label="eVTOL 与飞行汽车横向竞品定位图"></canvas></figure>
+
+        <h2 id="roadmap"><span class="cn">07 规模化商业扩张 Go / No-Go 判据</span><span class="en">07 Commercial Scaling Go / No-Go Criteria</span></h2>
+        <p class="cn">从“景区示范观光”走向“大规模城市高频空中交通”，未来核心门控在于：① 固态/高倍率快充电池取证落地将充电周转从 120 min 压缩至 ≤20 min；② 城市中心起降坪与 5G-A 低空智联网密度；③ 规模化交付后的航司运营盈利能力。</p>
+        <p class="en">Scaling beyond scenic loops requires certifying faster-charging / solid-state packs (cutting 120-min turnaround), building dense urban vertiports, and proving sustained airline unit profitability.</p>
+
+        <h2 id="references"><span class="cn">参考文献 (GB/T 7714—2015)</span><span class="en">References (GB/T 7714—2015)</span></h2>
+        <ol class="fv-reference-list">
+          <li id="ref1">中国民用航空局. 亿航 EH216-S 无人驾驶航空器系统专用条件及 TC/AC/PC 审定公告[EB/OL]. 2022–2024 [2026-11-23]. <a href="https://www.caac.gov.cn/" target="_blank" rel="noopener">https://www.caac.gov.cn/</a>.</li>
+          <li id="ref2">亿航智能 (EHang Holdings). 广东亿航通航与合肥合翼航空获颁全国首批载人无人驾驶 eVTOL 运营合格证 (OC) 公告[EB/OL]. (2025-03-28) [2026-11-23]. <a href="https://www.ehang.com/" target="_blank" rel="noopener">https://www.ehang.com/</a>.</li>
+          <li id="ref3">Battery Design &amp; eVTOL Directory. EH216-S 12-Pack Battery System (17 kWh) &amp; Flight Performance Specs[EB/OL]. 2025 [2026-11-23]. <a href="https://evtol.news/" target="_blank" rel="noopener">https://evtol.news/</a>.</li>
+          <li id="ref4">中国民航报. 亿航 EH216-S 搭载高能量固态电池飞行测试突破 48 分钟报道[EB/OL]. 2024–2025 [2026-11-23]. <a href="https://www.ehang.com/" target="_blank" rel="noopener">https://www.ehang.com/</a>.</li>
+          <li id="ref5">CnEVPost / AllFlyingCars. EH216-S Domestic &amp; International Pricing and Commercial Delivery Milestones[EB/OL]. 2024–2026 [2026-11-23]. <a href="https://cnevpost.com/" target="_blank" rel="noopener">https://cnevpost.com/</a>.</li>
+          <li id="ref6">张玉新. 飞行汽车技术基础 (Fundamentals of Flying Vehicle Technology)[EB/OL]. 吉林大学自动驾驶安全联合实验室, 2026 [2026-11-23]. <a href="https://lab.autozyx.com/fundamentals-of-flying-vehicle-technology/" target="_blank" rel="noopener">https://lab.autozyx.com/fundamentals-of-flying-vehicle-technology/</a>.</li>
+        </ol>
+      </article>
+
+      <aside class="fv-evidence-rail">
+        <p class="fv-rail-title"><span class="cn">证据分级图例</span><span class="en">Evidence Legend</span></p>
+        <ul>
+          <li><span class="fv-status fv-status-regulatory"><span class="cn">监管文件</span><span class="en">Regulatory</span></span><br><span class="cn">CAAC TC / AC / PC / OC 正式批文。</span><span class="en">Official CAAC certificates.</span></li>
+          <li><span class="fv-status fv-status-official"><span class="cn">官方披露</span><span class="en">Official</span></span><br><span class="cn">亿航智能公开技术参数与运营动态。</span><span class="en">EHang official specs &amp; ops.</span></li>
+          <li><span class="fv-status fv-status-conflict"><span class="cn">口径差异</span><span class="en">Conflict</span></span><br><span class="cn">现役取证版与固态测试原型差异标注。</span><span class="en">Certified vs prototype gap.</span></li>
+        </ul>
+        <div class="fv-rail-card">
+          <strong><span class="cn">作业-1 核查清单</span><span class="en">Assignment 1 Checklist</span></strong>
+          <span class="cn">✓ 根目录 <code>index.html</code><br>✓ 与作业-2 对象 (EH216-S) 严格一致<br>✓ 中英切换 + 物理/ROI仿真</span>
+          <span class="en">✓ Root <code>index.html</code><br>✓ Matches Assignment 2 (EH216-S)<br>✓ CN/EN + Physics/ROI sims</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="fv-footer">
+    <div class="container">
+      <p><span class="cn"><strong>《飞行汽车技术基础（2026）》课程作业-1：全方位调研与分析</strong> · 对象：亿航智能 EH216-S</span><span class="en"><strong>Fundamentals of Flying Vehicle Technology (2026) · Assignment 1</strong> · Subject: EHang EH216-S</span></p>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>
